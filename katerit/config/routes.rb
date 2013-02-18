@@ -1,4 +1,7 @@
 Katerit::Application.routes.draw do
+  resources :dishes
+
+
   resources :categories
 
 

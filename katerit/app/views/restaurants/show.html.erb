@@ -17,12 +17,21 @@
 
 <p>
   <b>Email:</b>
-  <%= @restaurant.email %>
+  <%= mail_to @restaurant.email %>
 </p>
 
 <p>
   <b>Website:</b>
-  <%= @restaurant.website %>
+  <%= link_to @restaurant.website, @restaurant.website %>
+</p>
+
+<p>
+  <b>Dishes:</b>
+  <ul>
+  <% @restaurant.dishes.each do |dish| %>
+  <%= link_to dish.name, dish_url(dish.id) %>
+  <% end %>
+  </ul>
 </p>
 
 
