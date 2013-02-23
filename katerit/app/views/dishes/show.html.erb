@@ -26,5 +26,17 @@
 </p>
 
 
+
 <%= link_to 'Edit', edit_dish_path(@dish) %> |
 <%= link_to 'Back', dishes_path %>
+
+<div id="myCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    <% @dish.pictures.each_with_index do |picture,i| %>
+      <div class="item <%= 'active' if i == 0%>"><%= image_tag picture.url %></div>
+    <% end %>
+  </div>
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a></div>
+</div>
+

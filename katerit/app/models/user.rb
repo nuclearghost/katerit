@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :remember_me, :role_ids
   # attr_accessible :title, :body
 
-  def role?(role)
-  	return !!self.roles.find_by_name(role.to_s.camelize)
+  def role?(role_sym)
+    roles.any? { |r| r.name.underscore.to_sym == role_sym }
   end
 end

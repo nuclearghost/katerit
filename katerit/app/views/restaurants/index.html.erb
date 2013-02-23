@@ -20,10 +20,10 @@
     <td><%= mail_to restaurant.email %></td>
     <td><%= link_to restaurant.website, restaurant.website %></td>
     <td><%= link_to 'Show', restaurant %></td>
-    <% if can? :update, restaurant %>
+    <% if can? :update, Restaurant %>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
     <% end %>
-    <% if can? :destroy, restaurant %>
+    <% if can? :destroy, Restaurant %>
         <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
   </tr>
@@ -32,6 +32,6 @@
 
 <br />
 
-<% if can? :create, @restaurants.first %>
+<% if can? :create, Restaurant %>
     <%= link_to 'New Restaurant', new_restaurant_path %>
 <% end %>
