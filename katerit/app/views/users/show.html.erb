@@ -19,5 +19,18 @@
 	</ul>
 </p>
 
+<% if current_user.role? :owner %>
+
+<p>
+	<b>Restaurants:</b>
+	<ul>
+		<% @user.restaurants.each do |restaurant| %>
+		<li><%= restaurant.name %></li>
+		<% end %>
+	</ul>
+</p>
+
+<% end %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

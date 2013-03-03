@@ -1,0 +1,10 @@
+<li class="control-group nested-fields">
+	<div class="controlrs">
+		<%= f.label :amount, "Quantity:" %>
+		<%= f.number_field :amount %>
+
+	    <%= f.collection_select :dish_id, Dish.all, :id, :name %>
+
+		<%= link_to_remove_association "remove", f %>
+	</div>
+</li>

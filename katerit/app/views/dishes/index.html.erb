@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Description</th>
     <th>Serves</th>
     <th>Price</th>
     <th>Restaurant</th>
@@ -15,6 +16,7 @@
 <% @dishes.each do |dish| %>
   <tr>
     <td><%= dish.name %></td>
+    <td><%= dish.description %></td>
     <td><%= dish.serves %></td>
     <td><%= dish.price %></td>
     <td><%= link_to dish.restaurant.name, restaurant_url(dish.restaurant.id) %></td>

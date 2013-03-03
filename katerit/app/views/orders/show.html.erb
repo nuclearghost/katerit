@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @order.user.name %>
+</p>
+
+<p>
+  <b>Event address:</b>
+  <%= @order.event_address %>
+</p>
+
+<p>
+  <b>Event datetime:</b>
+  <%= @order.event_datetime %>
+</p>
+
+<ul>
+	<% @order.quantities.each do |q| %>
+		<li><%= q.dish.name %>(<%= q.amount %>)</li>
+	<% end %>
+
+</ul>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

@@ -26,6 +26,11 @@
 </p>
 
 <p>
+  <b>Owner:</b>
+  <%= User.find_by_id(@restaurant.user_id).name %>
+</p>
+
+<p>
   <b>Dishes:</b>
   <ul>
   <% @restaurant.dishes.each do |dish| %>
